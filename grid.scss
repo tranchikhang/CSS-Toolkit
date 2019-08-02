@@ -1,0 +1,149 @@
+
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.justify {
+    text-align: justify;
+}
+
+@for $i from 1 through 5 {
+    .pl-#{$i} {
+        padding-left: #{$i}rem;
+    }
+}
+@for $i from 1 through 5 {
+    .pr-#{$i} {
+        padding-right: #{$i}rem;
+    }
+}
+@for $i from 1 through 5 {
+    .pt-#{$i} {
+        padding-top: #{$i}rem;
+    }
+}
+@for $i from 1 through 5 {
+    .pb-#{$i} {
+        padding-bottom: #{$i}rem;
+    }
+}
+
+@for $i from 1 through 12 {
+    $width: percentage($i / 12);
+    .col-#{$i} {
+        flex-basis: #{$width};
+        max-width: #{$width};
+    }
+}
+@for $i from 1 through 12 {
+    $width: percentage($i / 12);
+    .offset-#{$i} {
+        margin-left: #{$width};
+    }
+}
+
+@media (min-width:576px) {
+    @for $i from 1 through 12 {
+        $width: percentage($i / 12);
+        .col-sm-#{$i} {
+            flex-basis: #{$width};
+            max-width: #{$width};
+        }
+    }
+    @for $i from 1 through 12 {
+        $width: percentage($i / 12);
+        .sm-offset-#{$i} {
+            margin-left: #{$width};
+        }
+    }
+}
+
+@media (min-width:768px) {
+    @for $i from 1 through 12 {
+        $width: percentage($i / 12);
+        .col-md-#{$i} {
+            flex-basis: #{$width};
+            max-width: #{$width};
+        }
+    }
+    @for $i from 1 through 12 {
+        $width: percentage($i / 12);
+        .md-offset-#{$i} {
+            margin-left: #{$width};
+        }
+    }
+}
+
+@media (min-width:992px) {
+    @for $i from 1 through 12 {
+        $width: percentage($i / 12);
+        .col-lg-#{$i} {
+            flex-basis: #{$width};
+            max-width: #{$width};
+        }
+    }
+    @for $i from 1 through 12 {
+        $width: percentage($i / 12);
+        .lg-offset-#{$i} {
+            margin-left: #{$width};
+        }
+    }
+}
+
+@media (min-width:1200px) {
+    @for $i from 1 through 12 {
+        $width: percentage($i / 12);
+        .col-xl-#{$i} {
+            flex-basis: #{$width};
+            max-width: #{$width};
+        }
+    }
+    @for $i from 1 through 12 {
+        $width: percentage($i / 12);
+        .xl-offset-#{$i} {
+            margin-left: #{$width};
+        }
+    }
+}
+
